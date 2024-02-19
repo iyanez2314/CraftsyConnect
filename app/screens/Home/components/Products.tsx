@@ -8,19 +8,19 @@ interface ProductsProps {
 
 export default function Products({ images }: ProductsProps) {
   return (
-    <View className="flex flex-wrap flex-row space-y-3 items-end justify-evenly w-full h-full">
+    <View className="flex flex-wrap flex-row gap-3 items-end justify-evenly w-full h-full">
       {images.map((image, index) => (
         <View
           key={index}
-          className="bg-gray-200 h-[180px] rounded-md shadow-md relative"
+          className="bg-gray-200 w-[170px] h-[180px] rounded-md shadow-md relative"
         >
           <Image
             src={image?.download_url}
             alt={image?.author}
-            className="w-[180px] h-1/2 object-cover rounded-md"
+            className="w-full h-1/2 object-cover rounded-md"
           />
           <View className="mt-2 p-2">
-            <Text>{image?.author}</Text>
+            <Text className="font-semibold">{image?.author}</Text>
             <View className="flex flex-row gap-1 mt-1">
               <Text>354 ft </Text>
               <Text>•</Text>

@@ -1,6 +1,6 @@
 import React from "react";
 import { TextInput, View } from "react-native";
-import { Icons } from "../../../Components/icons";
+import { Icons } from "../../../components/icons";
 
 export default function HeaderSearch() {
   return (

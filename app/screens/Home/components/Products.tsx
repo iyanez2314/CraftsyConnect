@@ -1,21 +1,14 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
+import { Link } from "expo-router";
 
 interface ProductsProps {
   images: any[];
 }
 
 export default function Products({ images }: ProductsProps) {
-  const renderImageContainer = (image: any, index: number) => {
-    return (
-      <View key={index} className="flex flex-row justify-center w-full">
-        <Image src={image.download_url} alt={image.author} className="w-full" />
-      </View>
-    );
-  };
-
   return (
-    <View className="flex flex-wrap flex-row  space-y-2 items-end justify-evenly w-full h-full">
+    <View className="flex flex-wrap flex-row space-y-3 items-end justify-evenly w-full h-full">
       {images.map((image, index) => (
         <View
           key={index}
@@ -24,7 +17,7 @@ export default function Products({ images }: ProductsProps) {
           <Image
             src={image?.download_url}
             alt={image?.author}
-            className="w-[170px] h-1/2 object-cover rounded-md"
+            className="w-[180px] h-1/2 object-cover rounded-md"
           />
           <View className="mt-2 p-2">
             <Text>{image?.author}</Text>
@@ -35,7 +28,9 @@ export default function Products({ images }: ProductsProps) {
             </View>
 
             <View className="mt-2 w-[80px] h-[44px]">
-              <Text className="underline">View Item →</Text>
+              <Link href="/product/1">
+                <Text className="underline">View Item →</Text>
+              </Link>
             </View>
           </View>
 
